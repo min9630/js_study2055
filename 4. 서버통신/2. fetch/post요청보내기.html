@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        //새로운 애완동물 데이터
+       // const newPet ={
+         //   id: 5,
+          //  name: '불독',
+         //   kind: '꺼꼬',
+          //  age: 2
+       // };
+
+        //GET을 제외한 요청시 사용할 초기화정보객체
+        const requestInit = {
+            method : 'POST', //요청 방식
+            headers : {'content-type':'application/json'}, //요청 헤더 정보
+            body: JSON.stringify({
+                title: 'fetch 복습'
+            })//서버로 보낼 데이터 //JSON으로 변환
+        };
+
+        //애완동물 데이터 추가
+        fetch('http://localhost:8080/api/todos',requestInit)
+        .then(res => res.json())
+        .then(todos => {
+            console.log(todos);
+        })
+
+
+    </script>
+
+</body>
+</html>
